@@ -15,33 +15,63 @@ h2 {
     left: 1700px;
 }
 
-.reset {
-    width: 125px;
-    height: 50px;
+.utility button:nth-child(1) {
     position: absolute;
     top: 250px;
     left: 682px;
+    width: 125px;
+    height: 60px;
     color: #fff;
     padding: 10px;
     font-size: 20px;
     background-color: #3e3e42;
     border: 3px solid #2d2d30;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
-.give_up {
-    width: 125px;
-    height: 50px;
+.utility button:nth-child(2) {
     position: absolute;
     top: 250px;
     left: 1113px;
+    width: 125px;
+    height: 60px;
     color: #fff;
     padding: 10px;
     font-size: 20px;
     background-color: #3e3e42;
     border: 3px solid #2d2d30;
-    border-radius: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.utility button:nth-child(3) {
+    position: absolute;
+    top: 880px;
+    left: 656px;
+    width: 125px;
+    height: 60px;
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #3e3e42;
+    border: 3px solid #2d2d30;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.utility button:nth-child(4) {
+    position: absolute;
+    top: 880px;
+    left: 1139px;
+    width: 125px;
+    height: 60px;
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #3e3e42;
+    border: 3px solid #2d2d30;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -95,5 +125,5 @@ h2 {
 }
 
 button:hover {
-    background-color: #FC7300;
+    background-color: #00fcc5;
 }
