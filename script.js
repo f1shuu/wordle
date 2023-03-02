@@ -1,4 +1,4 @@
-var currentID = 1, currentWord = '', length = 0;
+var currentID = 0, currentWord = '', length = 0;
 var wordToGuess;
 const keys = document.querySelectorAll('.key');
 const giveUpButton = document.getElementById('give_up');
@@ -21,8 +21,8 @@ keys.forEach(key => {
         if (length < 5) {
             document.getElementById(currentID).textContent = key.textContent;
             currentWord += key.textContent;
-            length++;
             currentID++;
+            length++;
         }
     })
 });
@@ -42,17 +42,21 @@ resetButton.addEventListener('click', function () {
 
 // delete button input
 deleteButton.addEventListener('click', function () {
-    if (currentID > 1) {
+    if (currentID > 0) {
         document.getElementById(currentID - 1).textContent = '';
         currentWord = currentWord.slice(0, -1);
+        currentID--;
         length--;
-        if (currentID > 0) currentID--;
     }
 });
 
 // enter button input
 enterButton.addEventListener('click', function () {
-    if (((currentID - 1) % 5 !== 0) || currentID === 1) alert('Za mało znaków!');
+    if (currentID === 30) {
+        alert('Porażka! Ukryte słowo: ' + wordToGuess);
+        location.reload();
+    }
+    if (currentID % 5 !== 0) alert('Za mało znaków!');
     else {
         var temporaryWord = currentWord.toLowerCase();
         fetch('data.txt')
