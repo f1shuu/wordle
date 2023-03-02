@@ -15,14 +15,18 @@ h2 {
     left: 1700px;
 }
 
-.utility button:nth-child(1) {
+.utility {
+    top: 0px;
+    left: 0px;
+}
+
+.give_up_button {
     position: absolute;
-    top: 250px;
-    left: 682px;
+    top: 254px;
+    left: 670px;
     width: 125px;
     height: 60px;
     color: #fff;
-    padding: 10px;
     font-size: 20px;
     background-color: #3e3e42;
     border: 3px solid #2d2d30;
@@ -30,14 +34,13 @@ h2 {
     cursor: pointer;
 }
 
-.utility button:nth-child(2) {
+.reset_button {
     position: absolute;
-    top: 250px;
-    left: 1113px;
+    top: 254px;
+    left: 1125px;
     width: 125px;
     height: 60px;
     color: #fff;
-    padding: 10px;
     font-size: 20px;
     background-color: #3e3e42;
     border: 3px solid #2d2d30;
@@ -45,14 +48,13 @@ h2 {
     cursor: pointer;
 }
 
-.utility button:nth-child(3) {
+.delete_button {
     position: absolute;
-    top: 880px;
-    left: 656px;
+    top: 579px;
+    left: 670px;
     width: 125px;
     height: 60px;
     color: #fff;
-    padding: 10px;
     font-size: 20px;
     background-color: #3e3e42;
     border: 3px solid #2d2d30;
@@ -60,14 +62,13 @@ h2 {
     cursor: pointer;
 }
 
-.utility button:nth-child(4) {
+.enter_button {
     position: absolute;
-    top: 880px;
-    left: 1139px;
+    top: 579px;
+    left: 1125px;
     width: 125px;
     height: 60px;
     color: #fff;
-    padding: 10px;
     font-size: 20px;
     background-color: #3e3e42;
     border: 3px solid #2d2d30;
