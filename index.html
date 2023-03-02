@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Wordle</title>
+    <link rel="shortcut icon" href="icon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style type="text/css">
+        body {
+            background-color: #1e1e1e;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>W O R D L E</h1>
+        <h2>Copyright © 2023 f1shu</h2>
+    </div>
+    <button class="reset" id="reset">Reset</button>
+    <button class="give_up" id="give_up">Poddaj się</button>
+    <div class="keyboard">
+        <div class="keyboard_row">
+            <button class="key">Ą</button>
+            <button class="key">Ć</button>
+            <button class="key">Ę</button>
+            <button class="key">Ł</button>
+            <button class="key">Ń</button>
+            <button class="key">Ó</button>
+            <button class="key">Ś</button>
+            <button class="key">Ź</button>
+            <button class="key">Ż</button>
+        </div>
+        <div class="keyboard_row">
+            <button class="key">Q</button>
+            <button class="key">W</button>
+            <button class="key">E</button>
+            <button class="key">R</button>
+            <button class="key">T</button>
+            <button class="key">Y</button>
+            <button class="key">U</button>
+            <button class="key">I</button>
+            <button class="key">O</button>
+            <button class="key">P</button>
+        </div>
+        <div class="keyboard_row">
+            <button class="key">A</button>
+            <button class="key">S</button>
+            <button class="key">D</button>
+            <button class="key">F</button>
+            <button class="key">G</button>
+            <button class="key">H</button>
+            <button class="key">J</button>
+            <button class="key">K</button>
+            <button class="key">L</button>
+        </div>
+        <div class="keyboard_row">
+            <button id="delete" class="key">usuń</button>
+            <button class="key">Z</button>
+            <button class="key">X</button>
+            <button class="key">C</button>
+            <button class="key">V</button>
+            <button class="key">B</button>
+            <button class="key">N</button>
+            <button class="key">M</button>
+            <button id="enter" class="key">enter</button>
+        </div>
+    </div>
+    <div class="words">
+        <div class="words_row">
+            <button class="button" id="1"></button>
+            <button class="button" id="2"></button>
+            <button class="button" id="3"></button>
+            <button class="button" id="4"></button>
+            <button class="button" id="5"></button>
+        </div>
+        <div class="words_row">
+            <button class="button" id="6"></button>
+            <button class="button" id="7"></button>
+            <button class="button" id="8"></button>
+            <button class="button" id="9"></button>
+            <button class="button" id="10"></button>
+        </div>
+        <div class="words_row">
+            <button class="button" id="11"></button>
+            <button class="button" id="12"></button>
+            <button class="button" id="13"></button>
+            <button class="button" id="14"></button>
+            <button class="button" id="15"></button>
+        </div>
+        <div class="words_row">
+            <button class="button" id="16"></button>
+            <button class="button" id="17"></button>
+            <button class="button" id="18"></button>
+            <button class="button" id="19"></button>
+            <button class="button" id="20"></button>
+        </div>
+        <div class="words_row">
+            <button class="button" id="21"></button>
+            <button class="button" id="22"></button>
+            <button class="button" id="23"></button>
+            <button class="button" id="24"></button>
+            <button class="button" id="25"></button>
+        </div>
+        <div class="words_row">
+            <button class="button" id="26"></button>
+            <button class="button" id="27"></button>
+            <button class="button" id="28"></button>
+            <button class="button" id="29"></button>
+            <button class="button" id="30"></button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

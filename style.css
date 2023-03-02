@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'Anurati';
+    src: url('anurati.otf') format('truetype');
+}
+
+h1 {
+    font-family: 'Anurati', sans-serif;
+    font-size: 100px;
+}
+
+h2 {
+    font-size: 16px;
+    position: absolute;
+    top: 940px;
+    left: 1700px;
+}
+
+.reset {
+    width: 125px;
+    height: 50px;
+    position: absolute;
+    top: 250px;
+    left: 682px;
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #3e3e42;
+    border: 3px solid #2d2d30;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.give_up {
+    width: 125px;
+    height: 50px;
+    position: absolute;
+    top: 250px;
+    left: 1113px;
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #3e3e42;
+    border: 3px solid #2d2d30;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.keyboard {
+    position: absolute;
+    top: 700px;
+    gap: 2px;
+}
+
+.keyboard_row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1px;
+}
+
+.key {
+    width: 50px;
+    height: 60px;
+    color: #fff;
+    font-size: 24px;
+    background-color: #3e3e42;
+    border: 3px solid #2d2d30;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.words {
+    position: absolute;
+    top: 250px;
+    gap: 2px;
+}
+
+.words_row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1px;
+}
+
+.button {
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: #3e3e42;
+    border: 3px solid #2d2d30;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FC7300;
+}
