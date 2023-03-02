@@ -99,17 +99,11 @@ h2 {
     cursor: pointer;
 }
 
-.words {
-    position: absolute;
-    top: 250px;
-    gap: 2px;
-}
-
-.words_row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1px;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
 }
 
 .button {
