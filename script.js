@@ -6,16 +6,14 @@ const resetButton = document.getElementById('reset');
 const deleteButton = document.getElementById('delete');
 const enterButton = document.getElementById('enter');
 
-// reading words database and picking a random word
 fetch('data.txt')
     .then(response => response.text())
     .then(text => {
         const words = text.split('\n');
         wordToGuess = words[Math.floor(Math.random() * 26379)];
-        console.log(`Random word: ${wordToGuess}`);
+        console.log(wordToGuess);
     })
 
-// virtual keyboard input
 keys.forEach(key => {
     key.addEventListener('click', function () {
         if (length < 5) {
@@ -27,7 +25,6 @@ keys.forEach(key => {
     })
 });
 
-// give up button input
 giveUpButton.addEventListener('click', function () {
     if (confirm('Czy na pewno?')) {
         alert('Porażka! Ukryte słowo: ' + wordToGuess)
@@ -35,12 +32,10 @@ giveUpButton.addEventListener('click', function () {
     }
 });
 
-// reset button input
 resetButton.addEventListener('click', function () {
     if (confirm('Czy na pewno?')) location.reload();
 });
 
-// delete button input
 deleteButton.addEventListener('click', function () {
     if (currentID > 0) {
         document.getElementById(currentID - 1).textContent = '';
@@ -50,7 +45,6 @@ deleteButton.addEventListener('click', function () {
     }
 });
 
-// enter button input
 enterButton.addEventListener('click', function () {
     if (currentID === 30) {
         alert('Porażka! Ukryte słowo: ' + wordToGuess);
@@ -64,12 +58,36 @@ enterButton.addEventListener('click', function () {
             .then(text => {
                 if (text.includes(temporaryWord)) {
                     if (temporaryWord === wordToGuess) {
-                        if (confirm('Gratulacje! Chcesz rozpocząć nową grę?')) location.reload();
+                        win(currentID);
+                    } else {
+                        checkWord(wordToGuess, currentID);
                     }
                 }
-                else alert('Podane słowo nie istnieje!');
+                else alert('Nie znaleziono słowa!');
             });
         currentWord = '';
         length = 0;
     }
 });
+
+function checkWord(wordToGuess, currentID) {
+    var lettersAndTheirAppearances = {};
+    wordToGuess.replace(/\S/g, function(l){lettersAndTheirAppearances[l] = (isNaN(lettersAndTheirAppearances[l]) ? 1 : lettersAndTheirAppearances[l] + 1);});
+    for (let i = currentID - 5; i < currentID; i++) {
+        var letterToCheck = document.getElementById(i).textContent.toLowerCase();
+        if (wordToGuess.includes(letterToCheck)) {
+            document.getElementById(i).style.backgroundColor = "#ffcb00";
+        }
+    }
+}
+
+function win(currentID) {
+    for (let i = currentID - 5; i < currentID; i++) {
+        document.getElementById(i).style.backgroundColor = "#4caf50";
+    }
+    setTimeout(function () { if (confirm('Gratulacje! Chcesz rozpocząć nową grę?')) location.reload(); }, 1);
+}
+
+// brak możliwości usuwania poprzedniego
+// kasowanie słowa gdy nie ma go w bazie
+// poprawienie zielonego koloru po wygranej
