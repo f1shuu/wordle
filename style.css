@@ -45,8 +45,8 @@ h2 {
 
 .delete_button {
     position: absolute;
-    top: 861px;
-    left: calc(50% - 308px);
+    top: 579px;
+    left: calc(50% - 290px);
     width: 125px;
     height: 60px;
     color: #fff;
@@ -59,8 +59,8 @@ h2 {
 
 .enter_button {
     position: absolute;
-    top: 861px;
-    left: calc(50% + 183px);
+    top: 579px;
+    left: calc(50% + 165px);
     width: 125px;
     height: 60px;
     color: #fff;
