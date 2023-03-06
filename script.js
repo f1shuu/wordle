@@ -5,16 +5,12 @@ const resetButton = document.getElementById('reset');
 const deleteButton = document.getElementById('delete');
 const enterButton = document.getElementById('enter');
 
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    var words = this.responseText;
-    wordToGuess = words[Math.floor(Math.random() * 26379)];
+const fs = require('fs');
+fs.readFile('filename.txt', 'utf8', (err, data) => {
+    if (err) throw err;
+    wordToGuess = data[Math.floor(Math.random() * 26379)];
     console.log(wordToGuess);
-  }
-};
-xhttp.open("GET", "your_file.txt", true);
-xhttp.send();
+});
 
 keys.forEach(key => {
     key.addEventListener('click', function () {
