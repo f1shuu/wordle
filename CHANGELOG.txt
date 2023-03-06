@@ -7,4 +7,6 @@ HOTFIX v1.1 Naprawiono błąd uniemożliwiający odczyt słówek z bazy słów.
        v1.2 Zmieniono położenie przycisków "Usuń" i "Enter".
             Poprawiono działanie interfejsu. Gra powinna się teraz wyświetlać prawidłowo na ekranie o dowolnej rozdzielczości.
 
+       v1.2.1 Nieznacznie poprawiono wygląd interfejsu.
+       
 6 marca 2023
