@@ -61,8 +61,7 @@ enterButton.addEventListener('click', function () {
                 }
                 else {
                     alert('Nie znaleziono słowa!');
-                    for (let i = currentID - 5; i < currentID; i++)
-                        document.getElementById(i).textContent = '';
+                    for (let i = currentID - 5; i < currentID; i++) document.getElementById(i).textContent = '';
                     currentID -= 5;
                 }
             });
@@ -84,19 +83,13 @@ function checkWord(wordToGuess, currentID) {
                     deleted = true;
                 }
             }
-        } else {
-                keys.forEach(key => {
-                    if (document.getElementById(i).textContent.toLowerCase() === key.id)  key.style.backgroundColor = '#2d2d30';
-                });
-        }
+        } else keys.forEach(key => { if (document.getElementById(i).textContent.toLowerCase() === key.id) key.style.backgroundColor = '#2d2d30'; });
         index++;
     }
 }
 
 function win(currentID) {
-    for (let i = currentID - 5; i < currentID; i++) {
-        document.getElementById(i).style.backgroundColor = "#4caf50";
-    }
+    for (let i = currentID - 5; i < currentID; i++) document.getElementById(i).style.backgroundColor = "#4caf50";
     setTimeout(function () { if (confirm('Gratulacje! Chcesz rozpocząć nową grę?')) location.reload(); }, 100);
 }
 
