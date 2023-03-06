@@ -13,7 +13,7 @@ Twoim zadaniem jest zgadnięcie pięcioliterowego słowa z puli wszystkich takic
 Z każdą próbą gra będzie podświetlać litery wpisanych przez Ciebie słów:
 - KOLOR SZARY oznacza, że dana litera w ogóle nie występuje w szukanym słowie,
 - KOLOR ŻÓŁTY oznacza, że dana litera występuje w szukanym słowie, ale nie na tym miejscu,
-- KOLOR ZIELONY oznacza, że dana litera występuje w słowie i znajduje się już na odpowiednim miejscu.
+- KOLOR ZIELONY oznacza, że dana litera występuje w szukanym słowie i znajduje się już na odpowiednim miejscu.
 * Pamiętaj że słowo może zawierać dwie te same litery!
 
 Oprócz klawiatury, masz do dyspozycji cztery klawisze:
