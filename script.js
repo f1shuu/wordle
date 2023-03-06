@@ -10,7 +10,7 @@ fetch('data.txt')
     .then(text => {
         const words = text.split('\n');
         const wordToGuess = words[Math.floor(Math.random() * 26379)];
-        console.log(`Random word: ${wordToGuess}`);
+        console.log(wordToGuess);
     }).catch(error => console.error(error));
 
 keys.forEach(key => {
@@ -23,6 +23,7 @@ keys.forEach(key => {
         }
     })
 });
+
 
 giveUpButton.addEventListener('click', function () {
     if (confirm('Czy na pewno?')) {
