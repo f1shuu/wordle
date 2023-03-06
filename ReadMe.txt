@@ -4,7 +4,7 @@ Author: Filip 'f1shu' Szulżycki
 PL
 
 Jak uruchomić grę?
-1. Pobierz spakowany folder Wordle.zip.
+1. Pobierz spakowany folder Wordle.zip (zielony przycisk "<> Code", a następnie "Download ZIP").
 2. Wypakuj go w dowolnym miejscu, np. na pulpicie.
 3. Uruchom index.html (nie usuwaj pozostałych plików, są niezbędne do działania gry!).
 
