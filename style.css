@@ -45,8 +45,8 @@ h2 {
 
 .delete_button {
     position: absolute;
-    top: 879px;
-    left: calc(50% - 304px);
+    top: 861px;
+    left: calc(50% - 308px);
     width: 125px;
     height: 60px;
     color: #fff;
@@ -59,8 +59,8 @@ h2 {
 
 .enter_button {
     position: absolute;
-    top: 879px;
-    left: calc(50% + 179px);
+    top: 861px;
+    left: calc(50% + 183px);
     width: 125px;
     height: 60px;
     color: #fff;
@@ -73,15 +73,14 @@ h2 {
 
 .keyboard {
     position: absolute;
-    top: 700px;
-    gap: 2px;
+    top: 675px;
 }
 
 .keyboard_row {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 1px;
+    margin-bottom: 2px;
+    gap: 2px;
 }
 
 .key {
