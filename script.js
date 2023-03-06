@@ -7,11 +7,11 @@ const enterButton = document.getElementById('enter');
 
 fetch('data.txt')
     .then(response => response.text())
-    .then(text => {
-        const words = text.split('\n');
-        const wordToGuess = words[Math.floor(Math.random() * 26379)];
+    .then(data => {
+        const words = data.split('\n');
+        wordToGuess = words[Math.floor(Math.random() * 26379)];
         console.log(wordToGuess);
-    }).catch(error => console.error(error));
+    });
 
 keys.forEach(key => {
     key.addEventListener('click', function () {
@@ -23,7 +23,6 @@ keys.forEach(key => {
         }
     })
 });
-
 
 giveUpButton.addEventListener('click', function () {
     if (confirm('Czy na pewno?')) {
