@@ -5,12 +5,14 @@ const resetButton = document.getElementById('reset');
 const deleteButton = document.getElementById('delete');
 const enterButton = document.getElementById('enter');
 
-const fs = require('fs');
-fs.readFile('filename.txt', 'utf8', (err, data) => {
-    if (err) throw err;
-    wordToGuess = data[Math.floor(Math.random() * 26379)];
-    console.log(wordToGuess);
-});
+fetch('data.txt')
+    .then(response => response.text())
+    .then(text => {
+        const words = text.split(' ');
+        const wordToGuess = words[Math.floor(Math.random() * 26379)];
+        console.log(`Random word: ${wordToGuess}`);
+    })
+    .catch(error => console.error(error));
 
 keys.forEach(key => {
     key.addEventListener('click', function () {
