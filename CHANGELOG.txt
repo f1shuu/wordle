@@ -1,0 +1,10 @@
+Dziennik zmian
+       v1.0 Wydano grę Wordle.
+
+HOTFIX v1.1 Naprawiono błąd uniemożliwiający odczyt słówek z bazy słów.
+            Zmieniono adres WWW, pod którym dostępna jest gra.
+
+       v1.2 Zmieniono położenie przycisków "Usuń" i "Enter".
+            Poprawiono działanie interfejsu. Gra powinna się teraz wyświetlać prawidłowo na ekranie o dowolnej rozdzielczości.
+
+6 marca 2023

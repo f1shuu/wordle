@@ -15,15 +15,10 @@ h2 {
     left: 1700px;
 }
 
-.utility {
-    top: 0px;
-    left: 0px;
-}
-
 .give_up_button {
     position: absolute;
-    top: 254px;
-    left: 670px;
+    top: 255px;
+    left: calc(50% - 290px);
     width: 125px;
     height: 60px;
     color: #fff;
@@ -36,8 +31,8 @@ h2 {
 
 .reset_button {
     position: absolute;
-    top: 254px;
-    left: 1125px;
+    top: 255px;
+    left: calc(50% + 165px);
     width: 125px;
     height: 60px;
     color: #fff;
@@ -50,8 +45,8 @@ h2 {
 
 .delete_button {
     position: absolute;
-    top: 579px;
-    left: 670px;
+    top: 879px;
+    left: calc(50% - 304px);
     width: 125px;
     height: 60px;
     color: #fff;
@@ -64,8 +59,8 @@ h2 {
 
 .enter_button {
     position: absolute;
-    top: 579px;
-    left: 1125px;
+    top: 879px;
+    left: calc(50% + 179px);
     width: 125px;
     height: 60px;
     color: #fff;
