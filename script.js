@@ -11,8 +11,7 @@ fetch('data.txt')
         const words = text.split('\n');
         const wordToGuess = words[Math.floor(Math.random() * 26379)];
         console.log(`Random word: ${wordToGuess}`);
-    })
-    .catch(error => console.error(error));
+    }).catch(error => console.error(error));
 
 keys.forEach(key => {
     key.addEventListener('click', function () {
