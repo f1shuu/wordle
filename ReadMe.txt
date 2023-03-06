@@ -2,6 +2,12 @@ Wordle v1.0
 Author: Filip 'f1shu' Szulżycki
 
 PL
+
+Jak uruchomić grę?
+1. Pobierz spakowany folder Wordle.zip.
+2. Wypakuj go w dowolnym miejscu, np. na pulpicie.
+3. Uruchom index.html (nie usuwaj pozostałych plików, są niezbędne do działania gry!).
+
 Jak grać?
 Twoim zadaniem jest zgadnięcie pięcioliterowego słowa z puli wszystkich takich słów z języka polskiego (a jest ich ponad 26 tysięcy!). Masz na to 6 prób.
 Z każdą próbą gra będzie podświetlać litery wpisanych przez Ciebie słów:
