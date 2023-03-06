@@ -17,7 +17,5 @@ Oprócz klawiatury, masz do dyspozycji cztery klawisze:
 - USUŃ - usunięcie ostatnio wpisanej litery,
 - ENTER - zatwierdzenie wpisywanego słowa i przejście do następnej linii.
 
-** UWAGA! Jest to pierwsza wersja gry, mogą występować małe błędy. Daj mi o nich znać a poprawię grę :)
-
 Miłej gry!
 =============================================================================================================================
