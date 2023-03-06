@@ -8,7 +8,7 @@ const enterButton = document.getElementById('enter');
 fetch('data.txt')
     .then(response => response.text())
     .then(text => {
-        const words = text.split(' ');
+        const words = text.split('\n');
         const wordToGuess = words[Math.floor(Math.random() * 26379)];
         console.log(`Random word: ${wordToGuess}`);
     })
