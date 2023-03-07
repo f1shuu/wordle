@@ -43,10 +43,7 @@ deleteButton.addEventListener('click', function () {
 });
 
 enterButton.addEventListener('click', function () {
-    if (currentID === 30) {
-        alert('Porażka! Ukryte słowo: ' + wordToGuess);
-        location.reload();
-    } else if (currentID % 5 !== 0) alert('Za mało znaków!');
+    if (currentID % 5 !== 0) alert('Za mało znaków!');
     else {
         var temporaryWord = currentWord.toLowerCase();
         fetch('data.txt')
@@ -56,7 +53,10 @@ enterButton.addEventListener('click', function () {
                     if (temporaryWord === wordToGuess) {
                         for (let i = currentID - 5; i < currentID; i++) document.getElementById(i).style.backgroundColor = '#4caf50';
                         setTimeout(function () { if (confirm('Gratulacje! Chcesz rozpocząć nową grę?')) location.reload(); }, 100);
-                    } else checkWord(temporaryWord, wordToGuess, currentID);
+                    } else if (currentID === 30) {
+                        alert('Porażka! Ukryte słowo: ' + wordToGuess);
+                        location.reload();
+                    } else checkWord(wordToGuess, currentID);
                 } else {
                     alert('Nie znaleziono słowa!');
                     for (let i = currentID - 5; i < currentID; i++) document.getElementById(i).textContent = '';
@@ -68,7 +68,7 @@ enterButton.addEventListener('click', function () {
     }
 });
 
-function checkWord(temporaryWord, wordToGuess, currentID) {
+function checkWord(wordToGuess, currentID) {
     var index = 0;
     for (let i = currentID - 5; i < currentID; i++) {
         if (wordToGuess.includes(document.getElementById(i).textContent.toLowerCase())) {
