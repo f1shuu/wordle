@@ -5,9 +5,7 @@ const resetButton = document.getElementById('reset');
 const deleteButton = document.getElementById('delete');
 const enterButton = document.getElementById('enter');
 
-function openManual() {
-    window.open('README.txt', 'newwindow', 'width=928, height=320');
-}
+function openManual() { window.open('README.txt', 'newwindow', 'width=928, height=320'); }
 
 fetch('data.txt')
     .then(response => response.text())
