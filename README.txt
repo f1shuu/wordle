@@ -1,8 +1,5 @@
-Wordle v1.3
-Author: Filip 'f1shu' Szulżycki
+Wordle v1.4 - Instrukcja
 =============================================================================================================================
-PL
-
 Jak grać?
 Twoim zadaniem jest zgadnięcie pięcioliterowego słowa z puli wszystkich takich słów z języka polskiego (a jest ich ponad 26 tysięcy!). Masz na to 6 prób.
 Z każdą próbą gra będzie podświetlać litery wpisanych przez Ciebie słów:

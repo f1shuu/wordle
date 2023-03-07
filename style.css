@@ -15,6 +15,19 @@ h2 {
     left: 1700px;
 }
 
+.help_button {
+    position: absolute;
+    top: 100px;
+    left: calc(50% + 800px);
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    font-size: 30px;
+    background-color: #3e3e42;
+    border: 3px solid #2d2d30;
+    border-radius: 10px;
+    cursor: pointer;
+}
 .give_up_button {
     position: absolute;
     top: 255px;

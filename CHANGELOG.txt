@@ -1,4 +1,4 @@
-Dziennik zmian
+Dziennik zmian (aktualna wersja: 1.4)
 =============================================================================================================================
        v1.0   Wydano grę Wordle.
 
@@ -15,5 +15,7 @@ HOTFIX v1.2.2 Naprawiono źle działające przyciski "Usuń" i "Enter" i przywr�
        v1.2.3 Poprawiono plik README.txt.
 
        v1.3   Naprawiono błąd pokazujący informację o przegranej przy odgadnięciu słowa przy ostatniej próbie.
+
+       v1.4   Dodano przycisk otwierający instrukcję do gry.
 =============================================================================================================================       
 7 marca 2023
