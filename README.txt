@@ -1,18 +1,18 @@
-Wordle v1.4 - Instrukcja
+Wordle - Manual
 =============================================================================================================================
-Jak grać?
-Twoim zadaniem jest zgadnięcie pięcioliterowego słowa z puli wszystkich takich słów z języka polskiego (a jest ich ponad 26 tysięcy!). Masz na to 6 prób.
-Z każdą próbą gra będzie podświetlać litery wpisanych przez Ciebie słów:
-- KOLOR SZARY oznacza, że dana litera w ogóle nie występuje w szukanym słowie,
-- KOLOR ŻÓŁTY oznacza, że dana litera występuje w szukanym słowie, ale nie na tym miejscu,
-- KOLOR ZIELONY oznacza, że dana litera występuje w szukanym słowie i znajduje się już na odpowiednim miejscu.
-* Pamiętaj że słowo może zawierać dwie te same litery!
+How to play?
+Your task is to guess a five-letter word from a huge pool of such words in English (and there are more than 12 thousands of them!). You've got six tries.
+With each attempt, the game will highlight letters of a word you typed:
+- GRAY COLOR means that the given letter does not appear in the hidden word at all,
+- YELLOW COLOR means that the given letter appears in the hidden word, but in a different place,
+- GREEN COLOR means that the given letter appears in the hidden word and is already in a correct place.
+* Remember - one word may contain two or more the same characters!
 
-Oprócz klawiatury, masz do dyspozycji cztery klawisze:
-- PODDAJ SIĘ - reset rozgrywki i wyświetlenie ukrytego hasła,
-- RESET - szybki reset rozgrywki,
-- USUŃ - usunięcie ostatnio wpisanej litery,
-- ENTER - zatwierdzenie wpisywanego słowa i przejście do następnej linii.
+Besides the keyboard, you can use four other keys:
+- GIVE UP - reset the game and display the hidden word,
+- RESET - quickly reset the game,
+- DELETE - delete the last entered letter,
+- ENTER - confirm entered word and go to the next line.
 
-Miłej gry!
+Have fun! 
 =============================================================================================================================

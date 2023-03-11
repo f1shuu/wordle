@@ -1,0 +1,18 @@
+Wordle - Instrukcja
+=============================================================================================================================
+Jak grać?
+Twoim zadaniem jest zgadnięcie pięcioliterowego słowa z puli wszystkich takich słów z języka polskiego (a jest ich ponad 26 tysięcy!). Masz na to 6 prób.
+Z każdą próbą gra będzie podświetlać litery wpisanych przez Ciebie słów:
+- KOLOR SZARY oznacza, że dana litera w ogóle nie występuje w szukanym słowie,
+- KOLOR ŻÓŁTY oznacza, że dana litera występuje w szukanym słowie, ale nie na tym miejscu,
+- KOLOR ZIELONY oznacza, że dana litera występuje w szukanym słowie i znajduje się już na odpowiednim miejscu.
+* Pamiętaj że słowo może zawierać dwie te same litery!
+
+Oprócz klawiatury, masz do dyspozycji cztery klawisze:
+- PODDAJ SIĘ - reset rozgrywki i wyświetlenie ukrytego hasła,
+- RESET - szybki reset rozgrywki,
+- USUŃ - usunięcie ostatnio wpisanej litery,
+- ENTER - zatwierdzenie wpisywanego słowa i przejście do następnej linii.
+
+Miłej gry!
+=============================================================================================================================

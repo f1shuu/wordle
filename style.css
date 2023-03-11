@@ -11,8 +11,30 @@ h1 {
 h2 {
     font-size: 16px;
     position: absolute;
-    top: 940px;
-    left: 1700px;
+    top: 890px;
+    left: calc(50% + 830px);
+}
+
+.polish_button {
+    position: absolute;
+    top: 110px;
+    left: calc(50% - 860px);
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 4px 4px 0px 4px;
+}
+
+.english_button {
+    position: absolute;
+    top: 110px;
+    left: calc(50% - 760px);
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 4px 4px 0px 4px;
 }
 
 .help_button {
@@ -28,6 +50,7 @@ h2 {
     border-radius: 10px;
     cursor: pointer;
 }
+
 .give_up_button {
     position: absolute;
     top: 255px;
@@ -94,6 +117,17 @@ h2 {
     justify-content: center;
     margin-bottom: 2px;
     gap: 2px;
+}
+
+.polish_key {
+    width: 50px;
+    height: 60px;
+    color: #fff;
+    font-size: 24px;
+    background-color: #3e3e42;
+    border: 3px solid #2d2d30;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .key {
