@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Anurati';
-    src: url('anurati.otf') format('truetype');
+    src: url('assets/fnt/anurati.otf') format('truetype');
 }
 
 @font-face {
     font-family: 'Product Sans';
-    src: url('product sans.otf') format('truetype');
+    src: url('assets/fnt/product sans.otf') format('truetype');
 }
 
 h1 {

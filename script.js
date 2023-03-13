@@ -1,7 +1,6 @@
 var manual = "Jak grać?\n\nTwoim zadaniem jest zgadnięcie pięcioliterowego słowa z puli wszystkich takich słów z języka polskiego. Masz na to 6 prób.\nZ każdą próbą gra będzie podświetlać litery wpisanych przez Ciebie słów:\n- KOLOR SZARY oznacza, że dana litera w ogóle nie występuje w szukanym słowie,\n- KOLOR ŻÓŁTY oznacza, że dana litera występuje w szukanym słowie, ale nie na tym miejscu,\n- KOLOR ZIELONY oznacza, że dana litera występuje w szukanym słowie i znajduje się już na odpowiednimmiejscu.\n* Pamiętaj że słowo może zawierać dwie te same litery!\n\nOprócz klawiatury, masz do dyspozycji cztery klawisze:\n- PODDAJ SIĘ - reset rozgrywki i wyświetlenie ukrytego hasła,\n- RESET - szybki reset rozgrywki,\n- USUŃ - usunięcie ostatnio wpisanej litery,\n- ENTER - zatwierdzenie wpisywanego słowa i przejście do następnej linii.\n\nMiłej gry!";
-var database = "databasePL.txt";
+var database = "assets/dtbs/databasePL.txt";
 var numberOfWords = 26379;
-var manualName = "JakGrać.html";
 var languageSwitchWarning = "Spowoduje to utratę postępów w obecnej rozgrywce. Kontynuować?";
 var assuranceMessage = "Czy na pewno?";
 var noWordProvidedWarning = "Nie podano żadnego słowa!";
@@ -27,12 +26,10 @@ const yes2 = document.getElementById("yes2");
 const no2 = document.getElementById("no2");
 
 const polishContent = {
-    manual: "Jak grać?/n\nTwoim zadaniem jest zgadnięcie pięcioliterowego słowa z puli wszystkich takich słów z języka polskiego. Masz na to 6 prób.\nZ każdą próbą gra będzie podświetlać litery wpisanych przez Ciebie słów:\n- KOLOR SZARY oznacza, że dana litera w ogóle nie występuje w szukanym słowie,\n- KOLOR ŻÓŁTY oznacza, że dana litera występuje w szukanym słowie, ale nie na tym miejscu,\n- KOLOR ZIELONY oznacza, że dana litera występuje w szukanym słowie i znajduje się już na odpowiednimmiejscu.\n* Pamiętaj że słowo może zawierać dwie te same litery!\n\nOprócz klawiatury, masz do dyspozycji cztery klawisze:\n- PODDAJ SIĘ - reset rozgrywki i wyświetlenie ukrytego hasła,\n- RESET - szybki reset rozgrywki,\n- USUŃ - usunięcie ostatnio wpisanej litery,\n- ENTER - zatwierdzenie wpisywanego słowa i przejście do następnej linii.\n\nMiłej gry!",
     give_up: "Poddaj się",
     delete: "Usuń",
-    database: "databasePL.txt",
+    database: "assets/dtbs/databasePL.txt",
     numberOfWords: 26379,
-    manualName: "JakGrać.html",
     languageSwitchWarning: "Spowoduje to utratę postępów w obecnej rozgrywce. Kontynuować?",
     assuranceMessage: "Czy na pewno?",
     noWordProvidedWarning: "Nie podano żadnego słowa!",
@@ -50,9 +47,8 @@ const englishContent = {
     manual: "xD",
     give_up: "Give up",
     delete: "Delete",
-    database: "databaseENG.txt",
+    database: "assets/dtbs/databaseENG.txt",
     numberOfWords: 12546,
-    manualName: "HowToPlay.txt",
     languageSwitchWarning: "This will result in the loss of progress in the current game. Continue?",
     assuranceMessage: "Are you sure?",
     noWordProvidedWarning: "No word provided!",
@@ -74,7 +70,6 @@ function translate() {
     manual = currentLanguage.manual;
     database = currentLanguage.database;
     numberOfWords = currentLanguage.numberOfWords;
-    manualName = currentLanguage.manualName;
     languageSwitchWarning = currentLanguage.languageSwitchWarning;
     assuranceMessage = currentLanguage.assuranceMessage;
     noWordProvidedWarning = currentLanguage.noWordProvidedWarning;

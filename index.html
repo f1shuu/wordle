@@ -3,7 +3,7 @@
 
 <head>
     <title>Wordle</title>
-    <link rel="shortcut icon" href="icon.png">
+    <link rel="shortcut icon" href="assets/img/icon.png">
     <link rel="stylesheet" type="text/css" href="style.css">
     <style type="text/css">
         body {
@@ -26,16 +26,16 @@
         <h2 id="h2">v1.5.0</h2>
     </div>
     <button class="polish_button" id="polish">
-        <img src="PL.png">
+        <img src="assets/img/PL.png">
     </button>
     <button class="english_button" id="english">
-        <img src="ENG.png">
+        <img src="assets/img/ENG.png">
     </button>
     <button class="dark_button" id="dark">
-        <img src="dark.png">
+        <img src="assets/img/dark.png">
     </button>
     <button class="light_button" id="light">
-        <img src="light.png">
+        <img src="assets/img/light.png">
     </button>
     <button class="help_button" id="help" onclick=openManual()>?</button>
     <button class="give_up_button" id="give_up">Poddaj się</button>
@@ -122,38 +122,38 @@
     <div class="polish_manual" id="polish_manual">
         <h4>Wordle - jak grać</h4>
         <p>Odgadnij 5-literowe słowo w sześciu próbach!</p>
-        <img src="PL1.png">
+        <img src="assets/img/PL1.png">
         <p>Jeśli litera podświetli się na szaro, to nie występuje w ukrytym słowie.</p>
-        <img src="PL2.png">
+        <img src="assets/img/PL2.png">
         <p>Jeśli litera podświetli się na żółto, to występuje w ukrytym słowie, ale na innej pozycji.</p>
-        <img src="PL3.png">
+        <img src="assets/img/PL3.png">
         <p>Jeśli litera podświetli się na zielono, to występuje w ukrytym słowie na danej pozycji.</p>
         <button type="button" onclick=closeManual()>OK</button>
     </div>
     <div class="english_manual" id="english_manual">
         <h5>Wordle - how to play</h5>
         <p>Guess a five-letter word in six tries!</p>
-        <img src="ENG1.png">
+        <img src="assets/img/ENG1.png">
         <p>If a letter is hightlighted in gray, it does not appear in the hidden word.</p>
-        <img src="ENG2.png">
+        <img src="assets/img/ENG2.png">
         <p>If a letter is hightlighted in yellow, it appears in the hidden word, but on a different position.</p>
-        <img src="ENG3.png">
+        <img src="assets/img/ENG3.png">
         <p>If a letter is hightlighted in green, it appears in the hidden word on this particular position.</p>
         <button type="button" onclick=closeManual()>OK</button>
     </div>
     <div class="alert" id="alert">
-        <img src="exclamationMark.png">
+        <img src="assets/img/exclamationMark.png">
         <p id="alertMessage"></p>
         <button onclick=closeAlert()>OK</button>
     </div>
     <div class="confirmation" id="confirmation">
-        <img src="questionMark.png">
+        <img src="assets/img/questionMark.png">
         <p id="confirmationMessage"></p>
         <button id="yes1" onclick=openAlertAndReset()>Tak</button>
         <button id="no1" onclick=closeConfirmation()>Nie</button>
     </div>
     <div class="win" id="win">
-        <img src="win.png">
+        <img src="assets/img/win.png">
         <p id="winMessage"></p>
         <button id="yes2" onclick=closeAndClear()>Tak</button>
         <button id="no2" onclick=justClose()>Nie</button>
