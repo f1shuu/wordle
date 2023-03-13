@@ -154,6 +154,7 @@ function switchThemeToDark() {
     document.body.style.backgroundColor = "#1e1e1e";
     document.getElementById("h1").style.color = "#fff";
     document.getElementById("h2").style.color = "#fff";
+    document.getElementById("help").style.color = "#fff";
     currentTheme = dark;
 }
 
