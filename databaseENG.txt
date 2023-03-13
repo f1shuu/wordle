@@ -4650,6 +4650,7 @@ horis
 horks
 horme
 horns
+horse
 horst
 horsy
 hosed
@@ -5914,6 +5915,7 @@ loons
 loony
 loops
 loord
+loose
 loots
 loped
 loper
@@ -6677,6 +6679,7 @@ moony
 moops
 moors
 moory
+moose
 mooth
 moots
 moove

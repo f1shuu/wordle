@@ -3,9 +3,9 @@
 
 <head>
     <title>Wordle</title>
-    <link rel='shortcut icon' href='icon.png'>
-    <link rel='stylesheet' type='text/css' href='style.css'>
-    <style type='text/css'>
+    <link rel="shortcut icon" href="icon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style type="text/css">
         body {
             background-color: #1e1e1e;
             color: white;
@@ -21,100 +21,145 @@
 </head>
 
 <body>
-    <div class='container'>
-        <h1>W O R D L E</h1>
-        <h2>v1.5.0</h2>
+    <div class="container">
+        <h1 id="h1">W O R D L E</h1>
+        <h2 id="h2">v1.5.0</h2>
     </div>
-    <button class='polish_button' id='polish'>
-        <img src="PL.png" alt="PL_lang">
+    <button class="polish_button" id="polish">
+        <img src="PL.png">
     </button>
-    <button class='english_button' id='english'>
-        <img src="ENG.png" alt="ENG_lang">
+    <button class="english_button" id="english">
+        <img src="ENG.png">
     </button>
-    <button class='help_button' onclick="openManual()">?</button>
-    <button class='give_up_button' id='give_up'>Poddaj się</button>
-    <button class='reset_button' id='reset'>Reset</button>
-    <button class='delete_button' id='delete'>Usuń</button>
-    <button class='enter_button' id='enter'>Enter</button>
-    <div class='keyboard'>
-        <div class='keyboard_row'>
-            <button class='polish_key' id="ą">Ą</button>
-            <button class='polish_key' id="ć">Ć</button>
-            <button class='polish_key' id="ę">Ę</button>
-            <button class='polish_key' id="ł">Ł</button>
-            <button class='polish_key' id="ń">Ń</button>
-            <button class='polish_key' id="ó">Ó</button>
-            <button class='polish_key' id="ś">Ś</button>
-            <button class='polish_key' id="ź">Ź</button>
-            <button class='polish_key' id="ż">Ż</button>
+    <button class="dark_button" id="dark">
+        <img src="dark.png">
+    </button>
+    <button class="light_button" id="light">
+        <img src="light.png">
+    </button>
+    <button class="help_button" id="help" onclick=openManual()>?</button>
+    <button class="give_up_button" id="give_up">Poddaj się</button>
+    <button class="reset_button" id="reset">Reset</button>
+    <button class="delete_button" id="delete">Usuń</button>
+    <button class="enter_button" id="enter">Enter</button>
+    <div class="keyboard">
+        <div class="keyboard_row">
+            <button class="polish_key" id="ą">Ą</button>
+            <button class="polish_key" id="ć">Ć</button>
+            <button class="polish_key" id="ę">Ę</button>
+            <button class="polish_key" id="ł">Ł</button>
+            <button class="polish_key" id="ń">Ń</button>
+            <button class="polish_key" id="ó">Ó</button>
+            <button class="polish_key" id="ś">Ś</button>
+            <button class="polish_key" id="ź">Ź</button>
+            <button class="polish_key" id="ż">Ż</button>
         </div>
-        <div class='keyboard_row'>
-            <button class='key' id="q">Q</button>
-            <button class='key' id="w">W</button>
-            <button class='key' id="e">E</button>
-            <button class='key' id="r">R</button>
-            <button class='key' id="t">T</button>
-            <button class='key' id="y">Y</button>
-            <button class='key' id="u">U</button>
-            <button class='key' id="i">I</button>
-            <button class='key' id="o">O</button>
-            <button class='key' id="p">P</button>
+        <div class="keyboard_row">
+            <button class="key" id="q">Q</button>
+            <button class="key" id="w">W</button>
+            <button class="key" id="e">E</button>
+            <button class="key" id="r">R</button>
+            <button class="key" id="t">T</button>
+            <button class="key" id="y">Y</button>
+            <button class="key" id="u">U</button>
+            <button class="key" id="i">I</button>
+            <button class="key" id="o">O</button>
+            <button class="key" id="p">P</button>
         </div>
-        <div class='keyboard_row'>
-            <button class='key' id="a">A</button>
-            <button class='key' id="s">S</button>
-            <button class='key' id="d">D</button>
-            <button class='key' id="f">F</button>
-            <button class='key' id="g">G</button>
-            <button class='key' id="h">H</button>
-            <button class='key' id="j">J</button>
-            <button class='key' id="k">K</button>
-            <button class='key' id="l">L</button>
+        <div class="keyboard_row">
+            <button class="key" id="a">A</button>
+            <button class="key" id="s">S</button>
+            <button class="key" id="d">D</button>
+            <button class="key" id="f">F</button>
+            <button class="key" id="g">G</button>
+            <button class="key" id="h">H</button>
+            <button class="key" id="j">J</button>
+            <button class="key" id="k">K</button>
+            <button class="key" id="l">L</button>
         </div>
-        <div class='keyboard_row'>
-            <button class='key' id="z">Z</button>
-            <button class='key' id="x">X</button>
-            <button class='key' id="c">C</button>
-            <button class='key' id="v">V</button>
-            <button class='key' id="b">B</button>
-            <button class='key' id="n">N</button>
-            <button class='key' id="m">M</button>
+        <div class="keyboard_row">
+            <button class="key" id="z">Z</button>
+            <button class="key" id="x">X</button>
+            <button class="key" id="c">C</button>
+            <button class="key" id="v">V</button>
+            <button class="key" id="b">B</button>
+            <button class="key" id="n">N</button>
+            <button class="key" id="m">M</button>
         </div>
     </div>
-    <div class='grid'>
-        <button class='button' id='0'></button>
-        <button class='button' id='1'></button>
-        <button class='button' id='2'></button>
-        <button class='button' id='3'></button>
-        <button class='button' id='4'></button>
-        <button class='button' id='5'></button>
-        <button class='button' id='6'></button>
-        <button class='button' id='7'></button>
-        <button class='button' id='8'></button>
-        <button class='button' id='9'></button>
-        <button class='button' id='10'></button>
-        <button class='button' id='11'></button>
-        <button class='button' id='12'></button>
-        <button class='button' id='13'></button>
-        <button class='button' id='14'></button>
-        <button class='button' id='15'></button>
-        <button class='button' id='16'></button>
-        <button class='button' id='17'></button>
-        <button class='button' id='18'></button>
-        <button class='button' id='19'></button>
-        <button class='button' id='20'></button>
-        <button class='button' id='21'></button>
-        <button class='button' id='22'></button>
-        <button class='button' id='23'></button>
-        <button class='button' id='24'></button>
-        <button class='button' id='25'></button>
-        <button class='button' id='26'></button>
-        <button class='button' id='27'></button>
-        <button class='button' id='28'></button>
-        <button class='button' id='29'></button>
+    <div class="grid">
+        <button class="button" id="0"></button>
+        <button class="button" id="1"></button>
+        <button class="button" id="2"></button>
+        <button class="button" id="3"></button>
+        <button class="button" id="4"></button>
+        <button class="button" id="5"></button>
+        <button class="button" id="6"></button>
+        <button class="button" id="7"></button>
+        <button class="button" id="8"></button>
+        <button class="button" id="9"></button>
+        <button class="button" id="10"></button>
+        <button class="button" id="11"></button>
+        <button class="button" id="12"></button>
+        <button class="button" id="13"></button>
+        <button class="button" id="14"></button>
+        <button class="button" id="15"></button>
+        <button class="button" id="16"></button>
+        <button class="button" id="17"></button>
+        <button class="button" id="18"></button>
+        <button class="button" id="19"></button>
+        <button class="button" id="20"></button>
+        <button class="button" id="21"></button>
+        <button class="button" id="22"></button>
+        <button class="button" id="23"></button>
+        <button class="button" id="24"></button>
+        <button class="button" id="25"></button>
+        <button class="button" id="26"></button>
+        <button class="button" id="27"></button>
+        <button class="button" id="28"></button>
+        <button class="button" id="29"></button>
+    </div>
+    <div class="polish_manual" id="polish_manual">
+        <h4>Wordle - jak grać</h4>
+        <p>Odgadnij 5-literowe słowo w sześciu próbach!</p>
+        <img src="PL1.png">
+        <p>Jeśli litera podświetli się na szaro, to nie występuje w ukrytym słowie.</p>
+        <img src="PL2.png">
+        <p>Jeśli litera podświetli się na żółto, to występuje w ukrytym słowie, ale na innej pozycji.</p>
+        <img src="PL3.png">
+        <p>Jeśli litera podświetli się na zielono, to występuje w ukrytym słowie na danej pozycji.</p>
+        <button type="button" onclick=closeManual()>OK</button>
+    </div>
+    <div class="english_manual" id="english_manual">
+        <h5>Wordle - how to play</h5>
+        <p>Guess a five-letter word in six tries!</p>
+        <img src="ENG1.png">
+        <p>If a letter is hightlighted in gray, it does not appear in the hidden word.</p>
+        <img src="ENG2.png">
+        <p>If a letter is hightlighted in yellow, it appears in the hidden word, but on a different position.</p>
+        <img src="ENG3.png">
+        <p>If a letter is hightlighted in green, it appears in the hidden word on this particular position.</p>
+        <button type="button" onclick=closeManual()>OK</button>
+    </div>
+    <div class="alert" id="alert">
+        <img src="exclamationMark.png">
+        <p id="alertMessage"></p>
+        <button onclick=closeAlert()>OK</button>
+    </div>
+    <div class="confirmation" id="confirmation">
+        <img src="questionMark.png">
+        <p id="confirmationMessage"></p>
+        <button id="yes1" onclick=openAlertAndReset()>Tak</button>
+        <button id="no1" onclick=closeConfirmation()>Nie</button>
+    </div>
+    <div class="win" id="win">
+        <img src="win.png">
+        <p id="winMessage"></p>
+        <button id="yes2" onclick=closeAndClear()>Tak</button>
+        <button id="no2" onclick=justClose()>Nie</button>
     </div>
     </div>
-    <script src='script.js'></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
