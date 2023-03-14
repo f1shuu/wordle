@@ -98,15 +98,14 @@ function openAlert(message) {
 }
 
 function openAlertAndReset(message) {
+    closeConfirmation();
     if (resetting) {
-        closeConfirmation();
         message = loseMessage + wordToGuess;
         document.getElementById("alertMessage").innerHTML = message;
         document.getElementById("alert").classList.add("open-alert");
         clear();
         resetting = false;
     } else {
-        closeConfirmation();
         if (currentLanguage === polish) translate(english);
         else translate(polish);
     }
@@ -139,7 +138,7 @@ function generateRandomWord() {
         .then(data => {
             const words = data.split("\n");
             wordToGuess = words[Math.floor(Math.random() * numberOfWords)];
-            if (wordToGuess.length > 5) wordToGuess.slice(0, -1);
+            if (wordToGuess.length > 5) wordToGuess = wordToGuess.slice(0, -1);
             console.log(wordToGuess);
         });
 }
@@ -248,6 +247,7 @@ function checkWord(wordToGuess, currentID) {
                         clickedKeys.push(key.id);
                     }
                 });
+                wordToGuess = wordToGuess.replace(new RegExp(document.getElementById(i).textContent.toLowerCase()), "X");
             } else {
                 document.getElementById(i).style.backgroundColor = "#ffcb00";
                 if (!clickedKeys.includes(document.getElementById(i).textContent.toLowerCase())) {
@@ -263,13 +263,6 @@ function checkWord(wordToGuess, currentID) {
                             clickedKeys.push(key.id);
                         }
                     });
-                }
-            }
-            var deleted = false;
-            for (let j = 0; j < 5; j++) {
-                if (!deleted) {
-                    wordToGuess = wordToGuess.replace(new RegExp(document.getElementById(i).textContent.toLowerCase()), "X");
-                    deleted = true;
                 }
             }
         } else {
