@@ -1,4 +1,4 @@
-var started = false, currentLanguage = polish, resetting = false, currentID = 0, currentWord = "", length = 0, wordToGuess, clickedKeys = [];
+var started = false, currentLanguage = polish, currentID = 0, currentWord = "", length = 0, wordToGuess, clickedKeys = [];
 
 translate(polish);
 
@@ -6,49 +6,43 @@ function translate(languageToTranslateTo) {
     if (languageToTranslateTo === polish) {
         if (started === false || currentLanguage !== polish) {
             started = true;
-            if (currentID !== 0) openConfirmation(languageSwitchWarning);
-            else {
-                currentLanguage = polish;
-                document.getElementById("give_up").textContent = "Poddaj się";
-                document.getElementById("delete").textContent = "Usuń";
-                database = "assets/dtbs/databasePL.txt";
-                numberOfWords = 26379;
-                languageSwitchWarning = "Spowoduje to utratę postępów w obecnej rozgrywce. Kontynuować?";
-                assuranceMessage = "Czy na pewno?";
-                wrongWordWarning = "Za mało znaków!";
-                winMessage = "Gratulacje! Chcesz rozpocząć nową grę?";
-                loseMessage = "Porażka! Ukryte słowo: ";
-                noWordWarning = "Nie znaleziono słowa";
-                document.getElementById("yes1").textContent = "Tak";
-                document.getElementById("no1").textContent = "Nie";
-                document.getElementById("yes2").textContent = "Tak";
-                document.getElementById("no2").textContent = "Nie";
-                clear();
-                document.querySelectorAll(".polish_key").forEach(function (button) { button.style.display = "block" });
-            }
+            currentLanguage = polish;
+            document.getElementById("give_up").textContent = "Poddaj się";
+            document.getElementById("delete").textContent = "Usuń";
+            database = "assets/dtbs/databasePL.txt";
+            numberOfWords = 26379;
+            languageSwitchWarning = "Spowoduje to utratę postępów w obecnej rozgrywce. Kontynuować?";
+            assuranceMessage = "Czy na pewno?";
+            wrongWordWarning = "Za mało znaków!";
+            winMessage = "Gratulacje! Chcesz rozpocząć nową grę?";
+            loseMessage = "Porażka! Ukryte słowo: ";
+            noWordWarning = "Nie znaleziono słowa";
+            document.getElementById("yes1").textContent = "Tak";
+            document.getElementById("no1").textContent = "Nie";
+            document.getElementById("yes2").textContent = "Tak";
+            document.getElementById("no2").textContent = "Nie";
+            clear();
+            document.querySelectorAll(".polish_key").forEach(function (button) { button.style.display = "block" });
         }
     } else {
         if (currentLanguage !== english) {
-            if (currentID !== 0) openConfirmation(languageSwitchWarning);
-            else {
-                currentLanguage = english;
-                document.getElementById("give_up").textContent = "Give up";
-                document.getElementById("delete").textContent = "Delete";
-                database = "assets/dtbs/databaseENG.txt";
-                numberOfWords = 12550;
-                languageSwitchWarning = "This will result in the loss of progress in the current game. Continue?";
-                assuranceMessage = "Are you sure?";
-                wrongWordWarning = "Too few letters!";
-                winMessage = "Congrats! Do you want to play again?";
-                loseMessage = "You lose! Hidden word was: ";
-                noWordWarning = "Word not found";
-                document.getElementById("yes1").textContent = "Yes";
-                document.getElementById("no1").textContent = "No";
-                document.getElementById("yes2").textContent = "Yes";
-                document.getElementById("no2").textContent = "No";
-                clear();
-                document.querySelectorAll(".polish_key").forEach(function (button) { button.style.display = "none" });
-            }
+            currentLanguage = english;
+            document.getElementById("give_up").textContent = "Give up";
+            document.getElementById("delete").textContent = "Delete";
+            database = "assets/dtbs/databaseENG.txt";
+            numberOfWords = 12550;
+            languageSwitchWarning = "This will result in the loss of progress in the current game. Continue?";
+            assuranceMessage = "Are you sure?";
+            wrongWordWarning = "Too few letters!";
+            winMessage = "Congrats! Do you want to play again?";
+            loseMessage = "You lose! Hidden word was: ";
+            noWordWarning = "Word not found";
+            document.getElementById("yes1").textContent = "Yes";
+            document.getElementById("no1").textContent = "No";
+            document.getElementById("yes2").textContent = "Yes";
+            document.getElementById("no2").textContent = "No";
+            clear();
+            document.querySelectorAll(".polish_key").forEach(function (button) { button.style.display = "none" });
         }
     }
 }
@@ -99,16 +93,10 @@ function openAlert(message) {
 
 function openAlertAndReset(message) {
     closeConfirmation();
-    if (resetting) {
-        message = loseMessage + wordToGuess;
-        document.getElementById("alertMessage").innerHTML = message;
-        document.getElementById("alert").classList.add("open-alert");
-        clear();
-        resetting = false;
-    } else {
-        if (currentLanguage === polish) translate(english);
-        else translate(polish);
-    }
+    message = loseMessage + wordToGuess;
+    document.getElementById("alertMessage").innerHTML = message;
+    document.getElementById("alert").classList.add("open-alert");
+    clear();
 }
 
 function closeAlert() { document.getElementById("alert").classList.remove("open-alert"); }
@@ -125,12 +113,12 @@ function displayWinMessage(winMessage) {
     document.getElementById("win").classList.add("display-win");
 }
 
-function closeWinMessageAndClear() {
+function closeTheWinMessageAndClear() {
     document.getElementById("win").classList.remove("display-win");
     clear();
 }
 
-function justCloseWinMessage() { document.getElementById("win").classList.remove("display-win"); }
+function justCloseTheWinMessage() { document.getElementById("win").classList.remove("display-win"); }
 
 function generateRandomWord() {
     fetch(database)
@@ -178,15 +166,9 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
-document.getElementById("give_up").addEventListener("click", function () {
-    resetting = true;
-    openConfirmation(assuranceMessage);
-});
+document.getElementById("give_up").addEventListener("click", function () { openConfirmation(assuranceMessage); });
 
-document.getElementById("reset").addEventListener("click", function () {
-    resetting = true;
-    openConfirmation(assuranceMessage);
-});
+document.getElementById("reset").addEventListener("click", function () { openConfirmation(assuranceMessage); });
 
 function deleteFunction() {
     if (currentID > 0 && length > 0) {
@@ -211,10 +193,7 @@ function enterFunction() {
                         for (let i = currentID - 5; i < currentID; i++) document.getElementById(i).style.backgroundColor = "#4caf50";
                         displayWinMessage(winMessage);
                     }
-                    else if (currentID === 30) {
-                        resetting = true;
-                        openAlertAndReset(loseMessage + wordToGuess);
-                    }
+                    else if (currentID === 30) openAlertAndReset(loseMessage + wordToGuess);
                     else checkWord(wordToGuess, currentID);
                 } else {
                     openAlert(noWordWarning);

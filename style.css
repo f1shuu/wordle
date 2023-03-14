@@ -8,157 +8,66 @@
     src: url('assets/fnt/product sans.otf') format('truetype');
 }
 
+h2, h3, .help_button, .give_up_button, .reset_button, .delete_button, .enter_button, .polish_key, .key, .polish_manual h4, .english_manual h5, .polish_manual p, .english_manual p, .polish_manual button, .english_manual button, .alert button, .confirmation button, .win button, .alert p, .confirmation p, .win p { font-family: 'Product Sans', sans-serif; }
+
+h2, h3, .polish_button, .english_button, .dark_button, .light_button, .help_button, .give_up_button, .reset_button, .delete_button, .enter_button, .keyboard, .polish_manual, .english_manual, .alert, .confirmation, .win { position: absolute;}
+
 h1 {
     font-family: 'Anurati', sans-serif;
     font-size: 100px;
 }
 
-h2 {
-    font-family: 'Product Sans', sans-serif;
+.polish_button, .english_button, .dark_button, .light_button {
+    top: calc(0% + 110px);
+    left: calc(0% + 100px);
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 4px 4px 0px 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+h2, .dark_button, .light_button {
     font-size: 16px;
-    position: absolute;
-    top: 890px;
-    left: calc(50% + 830px);
+    top: calc(100% - 200px);
+    left: calc(100% - 175px);
 }
 
-h3 {
-    font-family: 'Product Sans', sans-serif;
-    font-size: 20px;
-    position: absolute;
-}
+.english_button { left: calc(0% + 200px); }
 
-.polish_button {
-    position: absolute;
-    top: 110px;
-    left: calc(50% - 860px);
-    background: transparent;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 4px 4px 0px 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
+.dark_button { left: calc(0% + 100px) }
 
-.english_button {
-    position: absolute;
-    top: 110px;
-    left: calc(50% - 760px);
-    background: transparent;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 4px 4px 0px 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
+.light_button { left: calc(0% + 200px); }
 
-.dark_button {
-    position: absolute;
-    top: 854px;
-    left: calc(50% - 860px);
-    background: transparent;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 4px 4px 0px 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.light_button {
-    position: absolute;
-    top: 854px;
-    left: calc(50% - 760px);
-    background: transparent;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 4px 4px 0px 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.help_button {
-    font-family: 'Product Sans', sans-serif;
-    position: absolute;
-    top: 100px;
-    left: calc(50% + 800px);
+.help_button, .give_up_button, .reset_button, .delete_button, .enter_button, .polish_key, .key, .button, .polish_manual, .english_manual, .alert, .confirmation, .win, .polish_manual button, .english_manual button, .alert button, .confirmation button, .win button {
+    top: calc(0% + 100px);
+    left: calc(100% - 175px);
     width: 60px;
     height: 60px;
     color: #fff;
     font-size: 30px;
     background: transparent;
     border: 3px solid #2d2d30;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.give_up_button {
-    font-family: 'Product Sans', sans-serif;
-    position: absolute;
+h3, .give_up_button, .reset_button, .delete_button, .enter_button, .button, .polish_key, .key, .polish_manual p, .english_manual p, .alert p, .confirmation p, .win p { font-size: 20px; }
+
+.give_up_button, .reset_button, .delete_button, .enter_button, .button, .polish_key, .key {
     top: 255px;
     left: calc(50% - 290px);
     width: 125px;
-    height: 60px;
-    color: #fff;
-    font-size: 20px;
     background-color: #3e3e42;
-    border: 3px solid #2d2d30;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.reset_button {
-    font-family: 'Product Sans', sans-serif;
-    position: absolute;
-    top: 255px;
-    left: calc(50% + 165px);
-    width: 125px;
-    height: 60px;
-    color: #fff;
-    font-size: 20px;
-    background-color: #3e3e42;
-    border: 3px solid #2d2d30;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
+.reset_button, .enter_button  { left: calc(50% + 165px); }
 
-.delete_button {
-    font-family: 'Product Sans', sans-serif;
-    position: absolute;
-    top: 579px;
-    left: calc(50% - 290px);
-    width: 125px;
-    height: 60px;
-    color: #fff;
-    font-size: 20px;
-    background-color: #3e3e42;
-    border: 3px solid #2d2d30;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
+.delete_button, .enter_button { top: 579px; }
 
-.enter_button {
-    font-family: 'Product Sans', sans-serif;
-    position: absolute;
-    top: 579px;
-    left: calc(50% + 165px);
-    width: 125px;
-    height: 60px;
-    color: #fff;
-    font-size: 20px;
-    background-color: #3e3e42;
-    border: 3px solid #2d2d30;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.keyboard {
-    position: absolute;
-    top: 675px;
-}
+.keyboard { top: 675px; }
 
 .keyboard_row {
     display: flex;
@@ -167,30 +76,9 @@ h3 {
     gap: 2px;
 }
 
-.polish_key {
-    font-family: 'Product Sans', sans-serif;
+.polish_key, .key {
     width: 50px;
-    height: 60px;
-    color: #fff;
     font-size: 24px;
-    background-color: #3e3e42;
-    border: 3px solid #2d2d30;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.key {
-    font-family: 'Product Sans', sans-serif;
-    width: 50px;
-    height: 60px;
-    color: #fff;
-    font-size: 24px;
-    background-color: #3e3e42;
-    border: 3px solid #2d2d30;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .grid {
@@ -202,252 +90,60 @@ h3 {
 
 .button {
     width: 60px;
-    height: 60px;
-    color: #fff;
     font-size: 30px;
     font-weight: bold;
-    background-color: #3e3e42;
-    border: 3px solid #2d2d30;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.polish_manual {
+.polish_manual, .english_manual, .alert, .confirmation, .win  {
     width: 400px;
+    height: auto;
     background: #1e1e1e;
     border: 4px solid #4caf50;
     border-radius: 16px;
-    position: absolute;
-    top: 0;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.1);
     text-align: center;
     padding: 0 30px 30px;
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.open-manual {
+.open-manual, .open-alert, .open-confirmation, .display-win {
     visibility: visible;
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
 }
 
-.polish_manual h4 {
-    font-family: 'Product Sans', sans-serif;
-    font-size: 40px;
-}
+.polish_manual h4, .english_manual h5 { font-size: 40px; }
 
-.polish_manual p {
-    font-family: 'Product Sans', sans-serif;
-    font-size: 20px;
-}
-
-.polish_manual button {
-    font-family: 'Product Sans', sans-serif;
+.polish_manual button, .english_manual button, .alert button, .confirmation button, .win button {
     width: 50%;
     height: 40px;
-    padding: 0px 0;
     background: #54545a;
-    color: #fff;
     font-size: 18px;
-    border: 3px solid #2d2d30;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.english_manual {
-    width: 400px;
-    background: #1e1e1e;
-    border: 4px solid #4caf50;
-    border-radius: 16px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.1);
-    text-align: center;
-    padding: 0 30px 30px;
-    visibility: hidden;
-    transition: transform 0.4s, top 0.4s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.open-manual {
-    visibility: visible;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(1);
-}
-
-.english_manual h5 {
-    font-family: 'Product Sans', sans-serif;
-    font-size: 40px;
-}
-
-.english_manual p {
-    font-family: 'Product Sans', sans-serif;
-    font-size: 20px;
-}
-
-.english_manual button {
-    font-family: 'Product Sans', sans-serif;
-    width: 50%;
-    height: 40px;
-    padding: 0px 0;
-    background: #54545a;
-    color: #fff;
-    font-size: 18px;
-    border: 3px solid #2d2d30;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.alert {
-    width: 400px;
+.alert, .confirmation, .win {
     background: #3e3e42;
     border: 4px solid #f05050;
-    border-radius: 16px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.1);
-    text-align: center;
-    padding: 0 30px 30px;
-    visibility: hidden;
-    transition: transform 0.4s, top 0.4s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.open-alert {
-    visibility: visible;
-    top: 43%;
-    transform: translate(-50%, -50%) scale(1);
-}
-
-.alert img {
+.alert img, .confirmation img {
     width: 100px;
     margin-top: -50px;
     border-radius: 50%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.alert p {
-    font-family: 'Product Sans', sans-serif;
-    font-size: 20px;
-}
+.confirmation { border: 4px solid #fff; }
 
-.alert button {
-    font-family: 'Product Sans', sans-serif;
-    width: 50%;
-    height: 40px;
-    padding: 0px 0;
-    background: #54545a;
-    color: #fff;
-    font-size: 18px;
-    border: 3px solid #2d2d30;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.confirmation {
-    width: 400px;
-    background: #3e3e42;
-    border: 4px solid #fff;
-    border-radius: 16px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.1);
-    text-align: center;
-    padding: 0 30px 30px;
-    visibility: hidden;
-    transition: transform 0.4s, top 0.4s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.open-confirmation {
-    visibility: visible;
-    top: 43%;
-    transform: translate(-50%, -50%) scale(1);
-}
-
-.confirmation img {
-    width: 100px;
-    margin-top: -50px;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.confirmation p {
-    font-family: 'Product Sans', sans-serif;
-    font-size: 20px;
-}
-
-.confirmation button {
-    font-family: 'Product Sans', sans-serif;
-    width: 50%;
-    height: 40px;
-    padding: 0px 0;
-    background: #54545a;
-    color: #fff;
-    font-size: 18px;
-    border: 3px solid #2d2d30;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.win {
-    width: 400px;
-    background: #3e3e42;
-    border: 4px solid #fbb014;;
-    border-radius: 16px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.1);
-    text-align: center;
-    padding: 0 30px 30px;
-    visibility: hidden;
-    transition: transform 0.4s, top 0.4s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.display-win {
-    visibility: visible;
-    top: 43%;
-    transform: translate(-50%, -50%) scale(1);
-}
+.win { border: 4px solid #fbb014; }
 
 .win img {
     width: 200px;
     margin-top: -100px;
 }
 
-.win p {
-    font-family: 'Product Sans', sans-serif;
-    font-size: 20px;
-    color: #fbb014;
-}
+.win p, .win button { color: #fbb014; }
 
-.win button {
-    font-family: 'Product Sans', sans-serif;
-    width: 50%;
-    height: 40px;
-    padding: 0px 0;
-    background: #54545a;
-    color: #fbb014;
-    font-size: 18px;
-    border: 3px solid #2d2d30;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-button:hover {
-    background-color: #2d2d30;
-}
+button:hover { background-color: #2d2d30; }
