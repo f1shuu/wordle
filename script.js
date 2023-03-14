@@ -3,12 +3,11 @@ var database = "assets/dtbs/databasePL.txt";
 var numberOfWords = 26379;
 var languageSwitchWarning = "Spowoduje to utratę postępów w obecnej rozgrywce. Kontynuować?";
 var assuranceMessage = "Czy na pewno?";
-var noWordProvidedWarning = "Nie podano żadnego słowa!";
 var wrongWordWarning = "Za mało znaków!";
 var winMessage = "Gratulacje! Chcesz rozpocząć nową grę?";
 var loseMessage = "Porażka! Ukryte słowo: ";
 var noWordWarning = "Nie znaleziono słowa!";
-var confirmationOpened = false, currentID = 0, currentWord = "", length = 0, wordToGuess, clickedKeys = [];
+var resetting = false, valid, currentID = 0, currentWord = "", length = 0, wordToGuess, clickedKeys = [];
 const polishButton = document.getElementById("polish");
 const englishButton = document.getElementById("english");
 const darkButton = document.getElementById("dark");
@@ -32,7 +31,6 @@ const polishContent = {
     numberOfWords: 26379,
     languageSwitchWarning: "Spowoduje to utratę postępów w obecnej rozgrywce. Kontynuować?",
     assuranceMessage: "Czy na pewno?",
-    noWordProvidedWarning: "Nie podano żadnego słowa!",
     wrongWordWarning: "Za mało znaków!",
     winMessage: "Gratulacje! Chcesz rozpocząć nową grę?",
     loseMessage: "Porażka! Ukryte słowo: ",
@@ -44,14 +42,12 @@ const polishContent = {
 };
 
 const englishContent = {
-    manual: "xD",
     give_up: "Give up",
     delete: "Delete",
     database: "assets/dtbs/databaseENG.txt",
     numberOfWords: 12546,
     languageSwitchWarning: "This will result in the loss of progress in the current game. Continue?",
     assuranceMessage: "Are you sure?",
-    noWordProvidedWarning: "No word provided!",
     wrongWordWarning: "Too few letters!",
     winMessage: "Congrats! Do you want to play again?",
     loseMessage: "You lose! Hidden word was: ",
@@ -72,7 +68,6 @@ function translate() {
     numberOfWords = currentLanguage.numberOfWords;
     languageSwitchWarning = currentLanguage.languageSwitchWarning;
     assuranceMessage = currentLanguage.assuranceMessage;
-    noWordProvidedWarning = currentLanguage.noWordProvidedWarning;
     wrongWordWarning = currentLanguage.wrongWordWarning;
     winMessage = currentLanguage.winMessage;
     loseMessage = currentLanguage.loseMessage;
@@ -85,17 +80,11 @@ function translate() {
 
 polishButton.addEventListener("click", () => {
     if (currentLanguage !== polishContent) {
-        if (currentID !== 0) {
-            if (confirm(languageSwitchWarning)) {
-                clear();
-                currentLanguage = polishContent;
-                translate();
-                document.querySelectorAll(".polish_key").forEach(function (button) { button.style.display = "block" });
-            }
-        } else {
-            clear();
+        if (currentID !== 0) openConfirmation(languageSwitchWarning)
+        else {
             currentLanguage = polishContent;
             translate();
+            clear();
             document.querySelectorAll(".polish_key").forEach(function (button) { button.style.display = "block" });
         }
     }
@@ -103,17 +92,11 @@ polishButton.addEventListener("click", () => {
 
 englishButton.addEventListener("click", () => {
     if (currentLanguage !== englishContent) {
-        if (currentID !== 0) {
-            if (confirm(languageSwitchWarning)) {
-                clear();
-                currentLanguage = englishContent;
-                translate();
-                document.querySelectorAll(".polish_key").forEach(function (button) { button.style.display = "none" });
-            }
-        } else {
-            clear();
+        if (currentID !== 0) openConfirmation(languageSwitchWarning)
+        else {
             currentLanguage = englishContent;
             translate();
+            clear();
             document.querySelectorAll(".polish_key").forEach(function (button) { button.style.display = "none" });
         }
     }
@@ -143,27 +126,16 @@ function closeManual() {
     else document.getElementById("english_manual").classList.remove("open-manual");
 }
 
-var currentTheme = dark;
-
-function switchThemeToDark() {
-    document.body.style.backgroundColor = "#1e1e1e";
-    document.getElementById("h1").style.color = "#fff";
-    document.getElementById("h2").style.color = "#fff";
-    document.getElementById("help").style.color = "#fff";
-    currentTheme = dark;
+function switchTheme(color1, color2) {
+    document.body.style.backgroundColor = color1;
+    document.getElementById("h1").style.color = color2;
+    document.getElementById("h2").style.color = color2;
+    document.getElementById("help").style.color = color2;
 }
 
-function switchThemeToLight() {
-    document.body.style.backgroundColor = "#fff";
-    document.getElementById("h1").style.color = "#3e3e42";
-    document.getElementById("h2").style.color = "#3e3e42";
-    document.getElementById("help").style.color = "#3e3e42";
-    currentTheme = light;
-}
+darkButton.addEventListener("click", function () { switchTheme("#1e1e1e", "#fff"); });
 
-darkButton.addEventListener("click", function () { switchThemeToDark(); });
-
-lightButton.addEventListener("click", function () { switchThemeToLight(); });
+lightButton.addEventListener("click", function () { switchTheme("#fff", "#3e3e42"); });
 
 function openAlert(message) {
     document.getElementById("alertMessage").innerHTML = message;
@@ -171,25 +143,35 @@ function openAlert(message) {
 }
 
 function openAlertAndReset(message) {
-    closeConfirmation();
-    message = loseMessage + wordToGuess;
-    document.getElementById("alertMessage").innerHTML = message;
-    document.getElementById("alert").classList.add("open-alert");
-    clear();
+    if (resetting) {
+        closeConfirmation();
+        message = loseMessage + wordToGuess;
+        document.getElementById("alertMessage").innerHTML = message;
+        document.getElementById("alert").classList.add("open-alert");
+        clear();
+        resetting = false;
+    } else {
+        closeConfirmation();
+        if (currentLanguage === polishContent) {
+            currentLanguage = englishContent;
+            document.querySelectorAll(".polish_key").forEach(function (button) { button.style.display = "none" });
+        } else {
+            currentLanguage = polishContent;
+            document.querySelectorAll(".polish_key").forEach(function (button) { button.style.display = "block" });
+        }
+        translate();
+        clear();
+    }
 }
 
 function closeAlert() { document.getElementById("alert").classList.remove("open-alert"); }
 
 function openConfirmation(message) {
-    confirmationOpened = true;
     document.getElementById("confirmationMessage").innerHTML = message;
     document.getElementById("confirmation").classList.add("open-confirmation");
 }
 
-function closeConfirmation() {
-    confirmationOpened = false;
-    document.getElementById("confirmation").classList.remove("open-confirmation");
-}
+function closeConfirmation() { document.getElementById("confirmation").classList.remove("open-confirmation"); }
 
 function displayWinMessage(winMessage) {
     document.getElementById("winMessage").innerHTML = winMessage;
@@ -208,7 +190,7 @@ function generateRandomWord() {
         .then(response => response.text())
         .then(data => {
             const words = data.split("\n");
-            wordToGuess = words[Math.floor(Math.random() * numberOfWords)];
+            wordToGuess = words[Math.floor(Math.random() * numberOfWords)].slice(0, -1);
             console.log(wordToGuess);
         });
 }
@@ -236,25 +218,42 @@ keys.forEach(key => {
     })
 });
 
-giveUpButton.addEventListener("click", function () { openConfirmation(assuranceMessage); });
+document.addEventListener("keydown", function (event) {
+    if (event.keyCode === 8) { deleteFunction(); }
+    else if (event.keyCode === 13) { enterFunction(); }
+    else if (event.keyCode >= 65 && event.keyCode <= 90) {
+        if (length < 5) {
+            document.getElementById(currentID).textContent = event.key.toUpperCase();
+            currentWord += event.key;
+            currentID++;
+            length++;
+        }
+    }
+});
 
-resetButton.addEventListener("click", function () { openConfirmation(assuranceMessage); });
+giveUpButton.addEventListener("click", function () {
+    resetting = true;
+    openConfirmation(assuranceMessage);
+});
 
-deleteButton.addEventListener("click", function () {
+resetButton.addEventListener("click", function () {
+    resetting = true;
+    openConfirmation(assuranceMessage);
+});
+
+function deleteFunction() {
     if (currentID > 0 && length > 0) {
         document.getElementById(currentID - 1).textContent = "";
         currentWord = currentWord.slice(0, -1);
         currentID--;
         length--;
     }
-});
+}
 
-enterButton.addEventListener("click", function () {
-    if (currentID === 0) {
-        openAlert(noWordProvidedWarning);
-        return;
-    }
-    else if (currentID % 5 !== 0) openAlert(wrongWordWarning);
+deleteButton.addEventListener("click", deleteFunction);
+
+function enterFunction() {
+    if (currentID === 0 || currentID % 5 !== 0) openAlert(wrongWordWarning);
     else {
         var temporaryWord = currentWord.toLowerCase();
         fetch(database)
@@ -264,10 +263,12 @@ enterButton.addEventListener("click", function () {
                     if (temporaryWord === wordToGuess) {
                         for (let i = currentID - 5; i < currentID; i++) document.getElementById(i).style.backgroundColor = "#4caf50";
                         displayWinMessage(winMessage);
-                    } else if (currentID === 30) {
-                        openAlert(loseMessage + wordToGuess);
-                        location.reload();
-                    } else checkWord(wordToGuess, currentID);
+                    }
+                    else if (currentID === 30) {
+                        resetting = true;
+                        openAlertAndReset(loseMessage + wordToGuess);
+                    }
+                    else checkWord(wordToGuess, currentID);
                 } else {
                     openAlert(noWordWarning);
                     for (let i = currentID - 5; i < currentID; i++) document.getElementById(i).textContent = "";
@@ -277,7 +278,9 @@ enterButton.addEventListener("click", function () {
         currentWord = "";
         length = 0;
     }
-});
+}
+
+enterButton.addEventListener("click", enterFunction);
 
 function checkWord(wordToGuess, currentID) {
     var index = 0;
@@ -285,6 +288,12 @@ function checkWord(wordToGuess, currentID) {
         if (wordToGuess.includes(document.getElementById(i).textContent.toLowerCase())) {
             if (wordToGuess.indexOf(document.getElementById(i).textContent.toLowerCase()) === index) {
                 document.getElementById(i).style.backgroundColor = "#4caf50";
+                polish_keys.forEach(key => {
+                    if (document.getElementById(i).textContent.toLowerCase() === key.id) {
+                        key.style.backgroundColor = "#4caf50";
+                        clickedKeys.push(key.id);
+                    }
+                });
                 keys.forEach(key => {
                     if (document.getElementById(i).textContent.toLowerCase() === key.id) {
                         key.style.backgroundColor = "#4caf50";
@@ -294,6 +303,12 @@ function checkWord(wordToGuess, currentID) {
             } else {
                 document.getElementById(i).style.backgroundColor = "#ffcb00";
                 if (!clickedKeys.includes(document.getElementById(i).textContent.toLowerCase())) {
+                    polish_keys.forEach(key => {
+                        if (document.getElementById(i).textContent.toLowerCase() === key.id) {
+                            key.style.backgroundColor = "#ffcb00";
+                            clickedKeys.push(key.id);
+                        }
+                    });
                     keys.forEach(key => {
                         if (document.getElementById(i).textContent.toLowerCase() === key.id) {
                             key.style.backgroundColor = "#ffcb00";
@@ -312,6 +327,12 @@ function checkWord(wordToGuess, currentID) {
         } else {
             document.getElementById(i).style.backgroundColor = "#2d2d30";
             if (!clickedKeys.includes(document.getElementById(i).textContent.toLowerCase())) {
+                polish_keys.forEach(key => {
+                    if (document.getElementById(i).textContent.toLowerCase() === key.id) {
+                        key.style.backgroundColor = "#2d2d30";
+                        clickedKeys.push(key.id);
+                    }
+                });
                 keys.forEach(key => {
                     if (document.getElementById(i).textContent.toLowerCase() === key.id) {
                         key.style.backgroundColor = "#2d2d30";

@@ -9,5 +9,5 @@ If a letter is hightlighted in yellow, it appears in the hidden word, but on a d
 If a letter is hightlighted in green, it appears in the hidden word on this particular position.  
 Good luck! :)  
   
-*Game still in development. Some minor bugs may occur.*  
+*Game still in development. Minor bugs may occur.*  
 <sub>by f1shu</sub>
