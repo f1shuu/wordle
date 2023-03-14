@@ -138,7 +138,8 @@ function generateRandomWord() {
         .then(response => response.text())
         .then(data => {
             const words = data.split("\n");
-            wordToGuess = words[Math.floor(Math.random() * numberOfWords)].slice(0, -1);
+            wordToGuess = words[Math.floor(Math.random() * numberOfWords)];
+            if (wordToGuess.length > 5) wordToGuess.slice(0, -1);
             console.log(wordToGuess);
         });
 }
