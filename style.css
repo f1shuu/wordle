@@ -19,42 +19,35 @@ h1 {
 
 .polish_button, .english_button, .dark_button, .light_button, .help_button, .give_up_button, .reset_button, .delete_button, .enter_button, .polish_key, .key, .button, .polish_manual, .english_manual, .alert, .confirmation, .win, .polish_manual button, .english_manual button, .alert button, .confirmation button, .win button, .alert img, .confirmation img { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); }
 
-.polish_button, .english_button, .dark_button, .light_button {
-    top: calc(0% + 110px);
-    left: calc(0% + 100px);
+.polish_button, .english_button, .dark_button, .light_button, .help_button, .give_up_button, .reset_button, .delete_button, .enter_button, .polish_key, .key, .button, .polish_manual, .english_manual, .alert, .confirmation, .win, .polish_manual button, .english_manual button, .alert button, .confirmation button, .win button {
     background: transparent;
-    border: none;
     border-radius: 8px;
     cursor: pointer;
+}
+
+.polish_button, .english_button, .dark_button, .light_button {
+    top: calc(0% + 110px);
+    border: none;
     padding: 4px 4px 0px 4px;
 }
+
+h2, .dark_button, .light_button, .help_button, .give_up_button, .reset_button, .delete_button, .enter_button, .polish_key, .key, .button, .polish_manual, .english_manual, .alert, .confirmation, .win, .polish_manual button, .english_manual button, .alert button, .confirmation button, .win button { left: calc(100% - 175px); }
 
 h2, .dark_button, .light_button {
     font-size: 16px;
     top: calc(100% - 200px);
-    left: calc(100% - 175px);
 }
 
-.english_button { left: calc(0% + 200px); }
+.polish_button, .english_button, .dark_button, .light_button { left: calc(0% + 100px); }
 
-.dark_button { left: calc(0% + 100px); }
-
-.light_button { left: calc(0% + 200px); }
+.english_button, .light_button { left: calc(0% + 200px); }
 
 .help_button, .give_up_button, .reset_button, .delete_button, .enter_button, .polish_key, .key, .button, .polish_manual, .english_manual, .alert, .confirmation, .win, .polish_manual button, .english_manual button, .alert button, .confirmation button, .win button {
     top: calc(0% + 100px);
-    left: calc(100% - 175px);
-    width: 60px;
     height: 60px;
     color: #fff;
-    font-size: 30px;
-    background: transparent;
     border: 3px solid #2d2d30;
-    border-radius: 8px;
-    cursor: pointer;
 }
-
-h3, .give_up_button, .reset_button, .delete_button, .enter_button, .button, .polish_key, .key, .polish_manual p, .english_manual p, .alert p, .confirmation p, .win p { font-size: 20px; }
 
 .give_up_button, .reset_button, .delete_button, .enter_button, .button, .polish_key, .key {
     top: 255px;
@@ -62,6 +55,13 @@ h3, .give_up_button, .reset_button, .delete_button, .enter_button, .button, .pol
     width: 125px;
     background-color: #3e3e42;
 }
+
+.help_button, .polish_key, .key, .button, .polish_manual, .english_manual, .alert, .confirmation, .win, .polish_manual button, .english_manual button, .alert button, .confirmation button, .win button {
+    width: 60px;
+    font-size: 30px;
+}
+
+h3, .give_up_button, .reset_button, .delete_button, .enter_button, .polish_key, .key, .polish_manual p, .english_manual p, .alert p, .confirmation p, .win p { font-size: 20px; }
 
 .reset_button, .enter_button  { left: calc(50% + 165px); }
 
@@ -88,11 +88,7 @@ h3, .give_up_button, .reset_button, .delete_button, .enter_button, .button, .pol
     gap: 5px;
 }
 
-.button {
-    width: 60px;
-    font-size: 30px;
-    font-weight: bold;
-}
+.button { font-weight: bold; }
 
 .polish_manual, .english_manual, .alert, .confirmation, .win  {
     width: 400px;
